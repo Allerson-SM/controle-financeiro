@@ -13,7 +13,7 @@ $sexo = $_POST['sexo'];
 
 $sql = "INSERT INTO usuarios (NOME,SOBRENOME,EMAIL,TELEFONE,SENHA,SEXO) VALUES ('$nome','$snome','$email', '$telefone','$senha1','$sexo')";
 if (mysqli_query($connect, $sql)) {
-    header("location: \controle_financeiro/index.php");
+    header("location: \controle-financeiro/index.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($connect);
 }

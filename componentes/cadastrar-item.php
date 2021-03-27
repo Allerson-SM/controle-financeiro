@@ -11,7 +11,7 @@
 
     $sql = "INSERT INTO lancamentos (DATA,DESCRICAO,$tipo) VALUES ('$data','$descricao', '$valor')";
     if (mysqli_query($connect, $sql)) {
-        header("location: \controle_financeiro/home.php");
+        header("location: \controle-financeiro/home.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($connect);
     }
