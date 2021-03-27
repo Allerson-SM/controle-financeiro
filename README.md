@@ -5,26 +5,25 @@ Ainda em desenvolvimento, foi utilizado um exemplo de projeto do Bootstrap.
 
 
 
-### Página do Index
+### Página de login
 
-![image-20210325194557670](C:\Users\aller\AppData\Roaming\Typora\typora-user-images\image-20210325194557670.png)
+![Login](https://github.com/Allerson-SM/controle-financeiro/blob/main/imgs/Login.PNG)
 
 
 
 ### Página home (ainda em desenvolvimento)
 
-![image-20210325194708524](C:\Users\aller\AppData\Roaming\Typora\typora-user-images\image-20210325194708524.png)
-
-![image-20210325194802042](C:\Users\aller\AppData\Roaming\Typora\typora-user-images\image-20210325194802042.png)
+![Home](https://github.com/Allerson-SM/controle-financeiro/blob/main/imgs/Home.PNG)
+![Home2](https://github.com/Allerson-SM/controle-financeiro/blob/main/imgs/Home-2.PNG)
 
 
 
 #### Página de cadastro de lançamento
 
-![image-20210325194853887](C:\Users\aller\AppData\Roaming\Typora\typora-user-images\image-20210325194853887.png)
+![Lançamento](https://github.com/Allerson-SM/controle-financeiro/blob/main/imgs/Lan%C3%A7amento.PNG)
 
 
 
 #### Página de cadastro de usuário
 
-![image-20210325194922809](C:\Users\aller\AppData\Roaming\Typora\typora-user-images\image-20210325194922809.png)
+![CadastroUsuario](https://github.com/Allerson-SM/controle-financeiro/blob/main/imgs/Cadastro.PNG)
