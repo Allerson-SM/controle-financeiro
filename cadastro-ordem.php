@@ -34,7 +34,7 @@ require_once 'componentes/dados-home.php';
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a href="componentes/logout.php" class="nav-link">Sair</a>
+            <a class="nav-link" onclick="confirmacao()">Sair</a>
             </li>
         </ul>
     </header>
@@ -108,6 +108,16 @@ require_once 'componentes/dados-home.php';
                 <!-- scripts -->
 
                 <script>
+                    function confirmacao() {
+                        var confirma = confirm('Deseja sair?');
+                        if (confirma == true) {
+                            window.location = "http://localhost/controle-financeiro/index.php";
+                        } else {
+                            window.location = "#";
+                        }
+                    };
+
+
                     //fonte: https://gist.github.com/antoniopassos/203181
                     function moeda(a, e, r, t) {
                         let n = "",
