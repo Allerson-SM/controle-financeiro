@@ -85,7 +85,15 @@ $dados = mysqli_fetch_array($resultado);
 
     .rd_tabs:checked~.content {
       display: block;
+    }
 
+    #totais {
+      list-style: none;
+    }
+
+    #totais li {
+      display: inline-block;
+      padding-left: 10%;
     }
   </style>
 </head>
@@ -175,6 +183,48 @@ $dados = mysqli_fetch_array($resultado);
             </li>
           </ul>
         </nav>
+
+        <nav>
+          <ul id="totais">
+            <li>
+              <div class="table-responsive">
+                <table class="table table-bordered border-dark">
+                  <thead>
+                    <tr>
+                      <td class="table-dark" style="width: 100px; background-color: rgba(63, 191, 76, 0.85)"><b>Receitas</b></td>
+                      <td id='receitaT' style="width: 100px;"></td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </li>
+            <li>
+              <div class="table-responsive">
+                <table class="table table-bordered border-dark">
+                  <thead>
+                    <tr>
+                      <td class="table-dark" style="width: 100px; background-color: rgba(255, 0, 0, 1.0)"><b>Despesas</b></td>
+                      <td id='despesaT' style="width: 100px;"></td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </li>
+            <li>
+              <div class="table-responsive">
+                <table class="table table-bordered border-dark">
+                  <thead>
+                    <tr>
+                      <td class="table-dark" style="width: 100px;"><b>Subtotal</b></td>
+                      <td id='subtotal' style="width: 100px;"></td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead class="table-dark">
@@ -392,10 +442,12 @@ $dados = mysqli_fetch_array($resultado);
                   $valor1_01_20 = $dado_01_20[0];
                   $valor2_01_20 = $dado_01_20[1];
                   $dif_01_20 = $valor1_01_20 - $valor2_01_20;
+                  $sub_01_20 = $sub_12_19 + $dif_01_20;
                 ?>
                   <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_01_20, 2, ',', '.'); ?></td>
                   <input id="2020_01_R" type="hidden" value="<?php echo $valor1_01_20; ?>">
-                  <input id="2020_01_D" type="hidden" value="<?php echo $valor2_01_20;
+                  <input id="2020_01_D" type="hidden" value="<?php echo $valor2_01_20; ?>">
+                  <input id="2020_01_S" type="hidden" value="<?php echo $sub_01_20;
                                                             } ?>">
                   <?php
                   /*Query para selecionar os valores de Fevereiro*/
@@ -405,10 +457,12 @@ $dados = mysqli_fetch_array($resultado);
                     $valor1_02_20 = $dado_02_20[0];
                     $valor2_02_20 = $dado_02_20[1];
                     $dif_02_20 = $valor2_01_20 - $valor2_02_20;
+                    $sub_02_20 = $sub_01_20 + $dif_02_20;
                   ?>
                     <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_02_20, 2, ',', '.'); ?></td>
                     <input id="2020_02_R" type="hidden" value="<?php echo $valor1_02_20; ?>">
-                    <input id="2020_02_D" type="hidden" value="<?php echo $valor2_02_20;
+                    <input id="2020_02_D" type="hidden" value="<?php echo $valor2_02_20; ?>">
+                    <input id="2020_02_S" type="hidden" value="<?php echo $sub_02_20;
                                                               } ?>">
                     <?php
                     /*Query para selecionar os valores de Março*/
@@ -418,10 +472,12 @@ $dados = mysqli_fetch_array($resultado);
                       $valor1_03_20 = $dado_03_20[0];
                       $valor2_03_20 = $dado_03_20[1];
                       $dif_03_20 = $valor1_03_20 - $valor2_03_20;
+                      $sub_03_20 = $sub_02_20 + $dif_03_20;
                     ?>
                       <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_03_20, 2, ',', '.'); ?></td>
                       <input id="2020_03_R" type="hidden" value="<?php echo $valor1_03_20; ?>">
-                      <input id="2020_03_D" type="hidden" value="<?php echo $valor2_03_20;
+                      <input id="2020_03_D" type="hidden" value="<?php echo $valor2_03_20; ?>">
+                      <input id="2020_03_S" type="hidden" value="<?php echo $sub_03_20;
                                                                 } ?>">
                       <?php
                       /*Query para selecionar os valores de Abril*/
@@ -431,10 +487,12 @@ $dados = mysqli_fetch_array($resultado);
                         $valor1_04_20 = $dado_04_20[0];
                         $valor2_04_20 = $dado_04_20[1];
                         $dif_04_20 = $valor1_04_20 - $valor2_04_20;
+                        $sub_04_20 = $sub_03_20 + $dif_04_20;
                       ?>
                         <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_04_20, 2, ',', '.'); ?></td>
                         <input id="2020_04_R" type="hidden" value="<?php echo $valor1_04_20; ?>">
-                        <input id="2020_04_D" type="hidden" value="<?php echo $valor2_04_20;
+                        <input id="2020_04_D" type="hidden" value="<?php echo $valor2_04_20; ?>">
+                        <input id="2020_04_S" type="hidden" value="<?php echo $sub_04_20;
                                                                   } ?>">
                         <?php
                         /*Query para selecionar os valores de Maio*/
@@ -444,10 +502,12 @@ $dados = mysqli_fetch_array($resultado);
                           $valor1_05_20 = $dado_05_20[0];
                           $valor2_05_20 = $dado_05_20[1];
                           $dif_05_20 = $valor1_05_20 - $valor2_05_20;
+                          $sub_05_20 = $sub_04_20 + $dif_05_20;
                         ?>
                           <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_05_20, 2, ',', '.'); ?></td>
                           <input id="2020_05_R" type="hidden" value="<?php echo $valor1_05_20; ?>">
-                          <input id="2020_05_D" type="hidden" value="<?php echo $valor2_05_20;
+                          <input id="2020_05_D" type="hidden" value="<?php echo $valor2_05_20; ?>">
+                          <input id="2020_05_S" type="hidden" value="<?php echo $sub_05_20;
                                                                     } ?>">
                           <?php
                           /*Query para selecionar os valores de Junho*/
@@ -457,10 +517,12 @@ $dados = mysqli_fetch_array($resultado);
                             $valor1_06_20 = $dado_06_20[0];
                             $valor2_06_20 = $dado_06_20[1];
                             $dif_06_20 = $valor1_06_20 - $valor2_06_20;
+                            $sub_06_20 = $sub_05_20 + $dif_06_20;
                           ?>
                             <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_06_20, 2, ',', '.'); ?></td>
                             <input id="2020_06_R" type="hidden" value="<?php echo $valor1_06_20; ?>">
-                            <input id="2020_06_D" type="hidden" value="<?php echo $valor2_06_20;
+                            <input id="2020_06_D" type="hidden" value="<?php echo $valor2_06_20; ?>">
+                            <input id="2020_06_S" type="hidden" value="<?php echo $sub_06_20;
                                                                       } ?>">
                             <?php
                             /*Query para selecionar os valores de Julho*/
@@ -470,10 +532,12 @@ $dados = mysqli_fetch_array($resultado);
                               $valor1_07_20 = $dado_07_20[0];
                               $valor2_07_20 = $dado_07_20[1];
                               $dif_07_20 = $valor1_07_20 - $valor2_07_20;
+                              $sub_07_20 = $sub_06_20 + $dif_07_20;
                             ?>
                               <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_07_20, 2, ',', '.'); ?></td>
                               <input id="2020_07_R" type="hidden" value="<?php echo $valor1_07_20; ?>">
-                              <input id="2020_07_D" type="hidden" value="<?php echo $valor2_07_20;
+                              <input id="2020_07_D" type="hidden" value="<?php echo $valor2_07_20; ?>">
+                              <input id="2020_07_S" type="hidden" value="<?php echo $sub_07_20;
                                                                         } ?>">
                               <?php
                               /*Query para selecionar os valores de Agosto*/
@@ -483,10 +547,12 @@ $dados = mysqli_fetch_array($resultado);
                                 $valor1_08_20 = $dado_08_20[0];
                                 $valor2_08_20 = $dado_08_20[1];
                                 $dif_08_20 = $valor1_08_20 - $valor2_08_20;
+                                $sub_08_20 = $sub_07_20 + $dif_08_20;
                               ?>
                                 <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_08_20, 2, ',', '.'); ?></td>
                                 <input id="2020_08_R" type="hidden" value="<?php echo $valor1_08_20; ?>">
-                                <input id="2020_08_D" type="hidden" value="<?php echo $valor2_08_20;
+                                <input id="2020_08_D" type="hidden" value="<?php echo $valor2_08_20; ?>">
+                                <input id="2020_08_S" type="hidden" value="<?php echo $sub_08_20;
                                                                           } ?>">
                                 <?php
                                 /*Query para selecionar os valores de Setembro*/
@@ -496,10 +562,12 @@ $dados = mysqli_fetch_array($resultado);
                                   $valor1_09_20 = $dado_09_20[0];
                                   $valor2_09_20 = $dado_09_20[1];
                                   $dif_09_20 = $valor1_09_20 - $valor2_09_20;
+                                  $sub_09_20 = $sub_08_20 + $dif_09_20;
                                 ?>
                                   <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_09_20, 2, ',', '.'); ?></td>
                                   <input id="2020_09_R" type="hidden" value="<?php echo $valor1_09_20; ?>">
-                                  <input id="2020_09_D" type="hidden" value="<?php echo $valor2_09_20;
+                                  <input id="2020_09_D" type="hidden" value="<?php echo $valor2_09_20; ?>">
+                                  <input id="2020_09_S" type="hidden" value="<?php echo $sub_09_20;
                                                                             } ?>">
                                   <?php
                                   /*Query para selecionar os valores de Outubro*/
@@ -509,10 +577,12 @@ $dados = mysqli_fetch_array($resultado);
                                     $valor1_10_20 = $dado_10_20[0];
                                     $valor2_10_20 = $dado_10_20[1];
                                     $dif_10_20 = $valor1_10_20 - $valor2_10_20;
+                                    $sub_10_20 = $sub_09_20 + $dif_10_20;
                                   ?>
                                     <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_10_20, 2, ',', '.'); ?></td>
                                     <input id="2020_10_R" type="hidden" value="<?php echo $valor1_10_20; ?>">
-                                    <input id="2020_10_D" type="hidden" value="<?php echo $valor2_10_20;
+                                    <input id="2020_10_D" type="hidden" value="<?php echo $valor2_10_20; ?>">
+                                    <input id="2020_10_S" type="hidden" value="<?php echo $sub_10_20;
                                                                               } ?>">
                                     <?php
                                     /*Query para selecionar os valores de Novembro*/
@@ -522,10 +592,12 @@ $dados = mysqli_fetch_array($resultado);
                                       $valor1_11_20 = $dado_11_20[0];
                                       $valor2_11_20 = $dado_11_20[1];
                                       $dif_11_20 = $valor1_11_20 - $valor2_11_20;
+                                      $sub_11_20 = $sub_10_20 + $dif_11_20;
                                     ?>
                                       <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_11_20, 2, ',', '.'); ?></td>
                                       <input id="2020_11_R" type="hidden" value="<?php echo $valor1_11_20; ?>">
-                                      <input id="2020_11_D" type="hidden" value="<?php echo $valor2_11_20;
+                                      <input id="2020_11_D" type="hidden" value="<?php echo $valor2_11_20; ?>">
+                                      <input id="2020_11_S" type="hidden" value="<?php echo $sub_11_20;
                                                                                 } ?>">
                                       <?php
                                       /*Query para selecionar os valores de Dezembro*/
@@ -535,10 +607,12 @@ $dados = mysqli_fetch_array($resultado);
                                         $valor1_12_20 = $dado_12_20[0];
                                         $valor2_12_20 = $dado_12_20[1];
                                         $dif_12_20 = $valor1_12_20 - $valor2_12_20;
+                                        $sub_12_20 = $sub_11_20 + $dif_12_20;
                                       ?>
                                         <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_12_20, 2, ',', '.'); ?></td>
                                         <input id="2020_12_R" type="hidden" value="<?php echo $valor1_12_20; ?>">
-                                        <input id="2020_12_D" type="hidden" value="<?php echo $valor2_12_20;
+                                        <input id="2020_12_D" type="hidden" value="<?php echo $valor2_12_20; ?>">
+                                        <input id="2020_12_S" type="hidden" value="<?php echo $sub_12_20;
                                                                                   } ?>">
               </tr>
               <!-- TABELA 2021 -->
@@ -552,10 +626,12 @@ $dados = mysqli_fetch_array($resultado);
                   $valor1_01_21 = $dado_01_21[0];
                   $valor2_01_21 = $dado_01_21[1];
                   $dif_01_21 = $valor1_01_21 - $valor2_01_21;
+                  $sub_01_21 = $sub_12_20 + $dif_01_21;
                 ?>
                   <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_01_21, 2, ',', '.'); ?></td>
                   <input id="2021_01_R" type="hidden" value="<?php echo $valor1_01_21; ?>">
-                  <input id="2021_01_D" type="hidden" value="<?php echo $valor2_01_21;
+                  <input id="2021_01_D" type="hidden" value="<?php echo $valor2_01_21; ?>">
+                  <input id="2021_01_S" type="hidden" value="<?php echo $sub_01_21;
                                                             } ?>">
                   <?php
                   /*Query para selecionar os valores de Fevereiro*/
@@ -565,10 +641,12 @@ $dados = mysqli_fetch_array($resultado);
                     $valor1_02_21 = $dado_02_21[0];
                     $valor2_02_21 = $dado_02_21[1];
                     $dif_02_21 = $valor2_01_21 - $valor2_02_21;
+                    $sub_02_21 = $sub_01_21 + $dif_02_21;
                   ?>
                     <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_02_21, 2, ',', '.'); ?></td>
                     <input id="2021_02_R" type="hidden" value="<?php echo $valor1_02_21; ?>">
-                    <input id="2021_02_D" type="hidden" value="<?php echo $valor2_02_21;
+                    <input id="2021_02_D" type="hidden" value="<?php echo $valor2_02_21; ?>">
+                    <input id="2021_02_S" type="hidden" value="<?php echo $sub_02_21;
                                                               } ?>">
                     <?php
                     /*Query para selecionar os valores de Março*/
@@ -578,10 +656,12 @@ $dados = mysqli_fetch_array($resultado);
                       $valor1_03_21 = $dado_03_21[0];
                       $valor2_03_21 = $dado_03_21[1];
                       $dif_03_21 = $valor1_03_21 - $valor2_03_21;
+                      $sub_03_21 = $sub_02_21 + $dif_03_21;
                     ?>
                       <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_03_21, 2, ',', '.'); ?></td>
                       <input id="2021_03_R" type="hidden" value="<?php echo $valor1_03_21; ?>">
-                      <input id="2021_03_D" type="hidden" value="<?php echo $valor2_03_21;
+                      <input id="2021_03_D" type="hidden" value="<?php echo $valor2_03_21; ?>">
+                      <input id="2021_03_S" type="hidden" value="<?php echo $sub_03_21;
                                                                 } ?>">
                       <?php
                       /*Query para selecionar os valores de Abril*/
@@ -591,10 +671,12 @@ $dados = mysqli_fetch_array($resultado);
                         $valor1_04_21 = $dado_04_21[0];
                         $valor2_04_21 = $dado_04_21[1];
                         $dif_04_21 = $valor1_04_21 - $valor2_04_21;
+                        $sub_04_21 = $sub_03_21 + $dif_04_21;
                       ?>
                         <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_04_21, 2, ',', '.'); ?></td>
                         <input id="2021_04_R" type="hidden" value="<?php echo $valor1_04_21; ?>">
-                        <input id="2021_04_D" type="hidden" value="<?php echo $valor2_04_21;
+                        <input id="2021_04_D" type="hidden" value="<?php echo $valor2_04_21; ?>">
+                        <input id="2021_04_S" type="hidden" value="<?php echo $sub_04_21;
                                                                   } ?>">
                         <?php
                         /*Query para selecionar os valores de Maio*/
@@ -604,10 +686,12 @@ $dados = mysqli_fetch_array($resultado);
                           $valor1_05_21 = $dado_05_21[0];
                           $valor2_05_21 = $dado_05_21[1];
                           $dif_05_21 = $valor1_05_21 - $valor2_05_21;
+                          $sub_05_21 = $sub_04_21 + $dif_05_21;
                         ?>
                           <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_05_21, 2, ',', '.'); ?></td>
                           <input id="2021_05_R" type="hidden" value="<?php echo $valor1_05_21; ?>">
-                          <input id="2021_05_D" type="hidden" value="<?php echo $valor2_05_21;
+                          <input id="2021_05_D" type="hidden" value="<?php echo $valor2_05_21; ?>">
+                          <input id="2021_05_S" type="hidden" value="<?php echo $sub_05_21;
                                                                     } ?>">
                           <?php
                           /*Query para selecionar os valores de Junho*/
@@ -617,10 +701,12 @@ $dados = mysqli_fetch_array($resultado);
                             $valor1_06_21 = $dado_06_21[0];
                             $valor2_06_21 = $dado_06_21[1];
                             $dif_06_21 = $valor1_06_21 - $valor2_06_21;
+                            $sub_06_21 = $sub_05_21 + $dif_06_21;
                           ?>
                             <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_06_21, 2, ',', '.'); ?></td>
                             <input id="2021_06_R" type="hidden" value="<?php echo $valor1_06_21; ?>">
-                            <input id="2021_06_D" type="hidden" value="<?php echo $valor2_06_21;
+                            <input id="2021_06_D" type="hidden" value="<?php echo $valor2_06_21; ?>">
+                            <input id="2021_06_S" type="hidden" value="<?php echo $sub_06_21;
                                                                       } ?>">
                             <?php
                             /*Query para selecionar os valores de Julho*/
@@ -630,10 +716,12 @@ $dados = mysqli_fetch_array($resultado);
                               $valor1_07_21 = $dado_07_21[0];
                               $valor2_07_21 = $dado_07_21[1];
                               $dif_07_21 = $valor1_07_21 - $valor2_07_21;
+                              $sub_07_21 = $sub_06_21 + $dif_07_21;
                             ?>
                               <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_07_21, 2, ',', '.'); ?></td>
                               <input id="2021_07_R" type="hidden" value="<?php echo $valor1_07_21; ?>">
-                              <input id="2021_07_D" type="hidden" value="<?php echo $valor2_07_21;
+                              <input id="2021_07_D" type="hidden" value="<?php echo $valor2_07_21; ?>">
+                              <input id="2021_07_S" type="hidden" value="<?php echo $sub_07_21;
                                                                         } ?>">
                               <?php
                               /*Query para selecionar os valores de Agosto*/
@@ -643,10 +731,12 @@ $dados = mysqli_fetch_array($resultado);
                                 $valor1_08_21 = $dado_08_21[0];
                                 $valor2_08_21 = $dado_08_21[1];
                                 $dif_08_21 = $valor1_08_21 - $valor2_08_21;
+                                $sub_08_21 = $sub_07_21 + $dif_08_21;
                               ?>
                                 <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_08_21, 2, ',', '.'); ?></td>
                                 <input id="2021_08_R" type="hidden" value="<?php echo $valor1_08_21; ?>">
-                                <input id="2021_08_D" type="hidden" value="<?php echo $valor2_08_21;
+                                <input id="2021_08_D" type="hidden" value="<?php echo $valor2_08_21; ?>">
+                                <input id="2021_08_S" type="hidden" value="<?php echo $sub_08_21;
                                                                           } ?>">
                                 <?php
                                 /*Query para selecionar os valores de Setembro*/
@@ -656,10 +746,12 @@ $dados = mysqli_fetch_array($resultado);
                                   $valor1_09_21 = $dado_09_21[0];
                                   $valor2_09_21 = $dado_09_21[1];
                                   $dif_09_21 = $valor1_09_21 - $valor2_09_21;
+                                  $sub_09_21 = $sub_08_21 + $dif_09_21;
                                 ?>
                                   <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_09_21, 2, ',', '.'); ?></td>
                                   <input id="2021_09_R" type="hidden" value="<?php echo $valor1_09_21; ?>">
-                                  <input id="2021_09_D" type="hidden" value="<?php echo $valor2_09_21;
+                                  <input id="2021_09_D" type="hidden" value="<?php echo $valor2_09_21; ?>">
+                                  <input id="2021_09_S" type="hidden" value="<?php echo $sub_09_21;
                                                                             } ?>">
                                   <?php
                                   /*Query para selecionar os valores de Outubro*/
@@ -669,10 +761,12 @@ $dados = mysqli_fetch_array($resultado);
                                     $valor1_10_21 = $dado_10_21[0];
                                     $valor2_10_21 = $dado_10_21[1];
                                     $dif_10_21 = $valor1_10_21 - $valor2_10_21;
+                                    $sub_10_21 = $sub_09_21 + $dif_10_21;
                                   ?>
                                     <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_10_21, 2, ',', '.'); ?></td>
                                     <input id="2021_10_R" type="hidden" value="<?php echo $valor1_10_21; ?>">
-                                    <input id="2021_10_D" type="hidden" value="<?php echo $valor2_10_21;
+                                    <input id="2021_10_D" type="hidden" value="<?php echo $valor2_10_21; ?>">
+                                    <input id="2021_10_S" type="hidden" value="<?php echo $sub_10_21;
                                                                               } ?>">
                                     <?php
                                     /*Query para selecionar os valores de Novembro*/
@@ -682,10 +776,12 @@ $dados = mysqli_fetch_array($resultado);
                                       $valor1_11_21 = $dado_11_21[0];
                                       $valor2_11_21 = $dado_11_21[1];
                                       $dif_11_21 = $valor1_11_21 - $valor2_11_21;
+                                      $sub_11_21 = $sub_10_21 + $dif_11_21;
                                     ?>
                                       <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_11_21, 2, ',', '.'); ?></td>
                                       <input id="2021_11_R" type="hidden" value="<?php echo $valor1_11_21; ?>">
-                                      <input id="2021_11_D" type="hidden" value="<?php echo $valor2_11_21;
+                                      <input id="2021_11_D" type="hidden" value="<?php echo $valor2_11_21; ?>">
+                                      <input id="2021_11_S" type="hidden" value="<?php echo $sub_11_21;
                                                                                 } ?>">
                                       <?php
                                       /*Query para selecionar os valores de Dezembro*/
@@ -695,10 +791,12 @@ $dados = mysqli_fetch_array($resultado);
                                         $valor1_12_21 = $dado_12_21[0];
                                         $valor2_12_21 = $dado_12_21[1];
                                         $dif_12_21 = $valor1_12_21 - $valor2_12_21;
+                                        $sub_12_21 = $sub_11_21 + $dif_12_21;
                                       ?>
                                         <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_12_21, 2, ',', '.'); ?></td>
                                         <input id="2021_12_R" type="hidden" value="<?php echo $valor1_12_21; ?>">
-                                        <input id="2021_12_D" type="hidden" value="<?php echo $valor2_12_21;
+                                        <input id="2021_12_D" type="hidden" value="<?php echo $valor2_12_21; ?>">
+                                        <input id="2021_12_S" type="hidden" value="<?php echo $sub_12_21;
                                                                                   } ?>">
               </tr>
               <!-- TABELA 2022 -->
@@ -712,10 +810,12 @@ $dados = mysqli_fetch_array($resultado);
                   $valor1_01_22 = $dado_01_22[0];
                   $valor2_01_22 = $dado_01_22[1];
                   $dif_01_22 = $valor1_01_22 - $valor2_01_22;
+                  $sub_01_22 = $sub_12_21 + $dif_01_22;
                 ?>
                   <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_01_22, 2, ',', '.'); ?></td>
                   <input id="2022_01_R" type="hidden" value="<?php echo $valor1_01_22; ?>">
-                  <input id="2022_01_D" type="hidden" value="<?php echo $valor2_01_22;
+                  <input id="2022_01_D" type="hidden" value="<?php echo $valor2_01_22; ?>">
+                  <input id="2022_01_S" type="hidden" value="<?php echo $sub_01_22;
                                                             } ?>">
                   <?php
                   /*Query para selecionar os valores de Fevereiro*/
@@ -725,10 +825,12 @@ $dados = mysqli_fetch_array($resultado);
                     $valor1_02_22 = $dado_02_22[0];
                     $valor2_02_22 = $dado_02_22[1];
                     $dif_02_22 = $valor2_01_22 - $valor2_02_22;
+                    $sub_02_22 = $sub_01_22 + $dif_02_22;
                   ?>
                     <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_02_22, 2, ',', '.'); ?></td>
                     <input id="2022_02_R" type="hidden" value="<?php echo $valor1_02_22; ?>">
-                    <input id="2022_02_D" type="hidden" value="<?php echo $valor2_02_22;
+                    <input id="2022_02_D" type="hidden" value="<?php echo $valor2_02_22; ?>">
+                    <input id="2022_02_S" type="hidden" value="<?php echo $sub_02_22;
                                                               } ?>">
                     <?php
                     /*Query para selecionar os valores de Março*/
@@ -738,10 +840,12 @@ $dados = mysqli_fetch_array($resultado);
                       $valor1_03_22 = $dado_03_22[0];
                       $valor2_03_22 = $dado_03_22[1];
                       $dif_03_22 = $valor1_03_22 - $valor2_03_22;
+                      $sub_03_22 = $sub_02_22 + $dif_03_22;
                     ?>
                       <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_03_22, 2, ',', '.'); ?></td>
                       <input id="2022_03_R" type="hidden" value="<?php echo $valor1_03_22; ?>">
-                      <input id="2022_03_D" type="hidden" value="<?php echo $valor2_03_22;
+                      <input id="2022_03_D" type="hidden" value="<?php echo $valor2_03_22; ?>">
+                      <input id="2022_03_S" type="hidden" value="<?php echo $sub_03_22;
                                                                 } ?>">
                       <?php
                       /*Query para selecionar os valores de Abril*/
@@ -751,10 +855,12 @@ $dados = mysqli_fetch_array($resultado);
                         $valor1_04_22 = $dado_04_22[0];
                         $valor2_04_22 = $dado_04_22[1];
                         $dif_04_22 = $valor1_04_22 - $valor2_04_22;
+                        $sub_04_22 = $sub_03_22 + $dif_04_22;
                       ?>
                         <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_04_22, 2, ',', '.'); ?></td>
                         <input id="2022_04_R" type="hidden" value="<?php echo $valor1_04_22; ?>">
-                        <input id="2022_04_D" type="hidden" value="<?php echo $valor2_04_22;
+                        <input id="2022_04_D" type="hidden" value="<?php echo $valor2_04_22; ?>">
+                        <input id="2022_04_S" type="hidden" value="<?php echo $sub_04_22;
                                                                   } ?>">
                         <?php
                         /*Query para selecionar os valores de Maio*/
@@ -764,10 +870,12 @@ $dados = mysqli_fetch_array($resultado);
                           $valor1_05_22 = $dado_05_22[0];
                           $valor2_05_22 = $dado_05_22[1];
                           $dif_05_22 = $valor1_05_22 - $valor2_05_22;
+                          $sub_05_22 = $sub_04_22 + $dif_05_22;
                         ?>
                           <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_05_22, 2, ',', '.'); ?></td>
                           <input id="2022_05_R" type="hidden" value="<?php echo $valor1_05_22; ?>">
-                          <input id="2022_05_D" type="hidden" value="<?php echo $valor2_05_22;
+                          <input id="2022_05_D" type="hidden" value="<?php echo $valor2_05_22; ?>">
+                          <input id="2022_05_S" type="hidden" value="<?php echo $sub_05_22;
                                                                     } ?>">
                           <?php
                           /*Query para selecionar os valores de Junho*/
@@ -777,10 +885,12 @@ $dados = mysqli_fetch_array($resultado);
                             $valor1_06_22 = $dado_06_22[0];
                             $valor2_06_22 = $dado_06_22[1];
                             $dif_06_22 = $valor1_06_22 - $valor2_06_22;
+                            $sub_06_22 = $sub_05_22 + $dif_06_22;
                           ?>
                             <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_06_22, 2, ',', '.'); ?></td>
                             <input id="2022_06_R" type="hidden" value="<?php echo $valor1_06_22; ?>">
-                            <input id="2022_06_D" type="hidden" value="<?php echo $valor2_06_22;
+                            <input id="2022_06_D" type="hidden" value="<?php echo $valor2_06_22; ?>">
+                            <input id="2022_06_S" type="hidden" value="<?php echo $sub_06_22;
                                                                       } ?>">
                             <?php
                             /*Query para selecionar os valores de Julho*/
@@ -790,10 +900,12 @@ $dados = mysqli_fetch_array($resultado);
                               $valor1_07_22 = $dado_07_22[0];
                               $valor2_07_22 = $dado_07_22[1];
                               $dif_07_22 = $valor1_07_22 - $valor2_07_22;
+                              $sub_07_22 = $sub_06_22 + $dif_07_22;
                             ?>
                               <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_07_22, 2, ',', '.'); ?></td>
                               <input id="2022_07_R" type="hidden" value="<?php echo $valor1_07_22; ?>">
-                              <input id="2022_07_D" type="hidden" value="<?php echo $valor2_07_22;
+                              <input id="2022_07_D" type="hidden" value="<?php echo $valor2_07_22; ?>">
+                              <input id="2022_07_S" type="hidden" value="<?php echo $sub_07_22;
                                                                         } ?>">
                               <?php
                               /*Query para selecionar os valores de Agosto*/
@@ -803,10 +915,12 @@ $dados = mysqli_fetch_array($resultado);
                                 $valor1_08_22 = $dado_08_22[0];
                                 $valor2_08_22 = $dado_08_22[1];
                                 $dif_08_22 = $valor1_08_22 - $valor2_08_22;
+                                $sub_08_22 = $sub_07_22 + $dif_08_22;
                               ?>
                                 <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_08_22, 2, ',', '.'); ?></td>
                                 <input id="2022_08_R" type="hidden" value="<?php echo $valor1_08_22; ?>">
-                                <input id="2022_08_D" type="hidden" value="<?php echo $valor2_08_22;
+                                <input id="2022_08_D" type="hidden" value="<?php echo $valor2_08_22; ?>">
+                                <input id="2022_08_S" type="hidden" value="<?php echo $sub_08_22;
                                                                           } ?>">
                                 <?php
                                 /*Query para selecionar os valores de Setembro*/
@@ -816,10 +930,12 @@ $dados = mysqli_fetch_array($resultado);
                                   $valor1_09_22 = $dado_09_22[0];
                                   $valor2_09_22 = $dado_09_22[1];
                                   $dif_09_22 = $valor1_09_22 - $valor2_09_22;
+                                  $sub_09_22 = $sub_08_22 + $dif_09_22;
                                 ?>
                                   <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_09_22, 2, ',', '.'); ?></td>
                                   <input id="2022_09_R" type="hidden" value="<?php echo $valor1_09_22; ?>">
-                                  <input id="2022_09_D" type="hidden" value="<?php echo $valor2_09_22;
+                                  <input id="2022_09_D" type="hidden" value="<?php echo $valor2_09_22; ?>">
+                                  <input id="2022_09_S" type="hidden" value="<?php echo $sub_09_22;
                                                                             } ?>">
                                   <?php
                                   /*Query para selecionar os valores de Outubro*/
@@ -829,10 +945,12 @@ $dados = mysqli_fetch_array($resultado);
                                     $valor1_10_22 = $dado_10_22[0];
                                     $valor2_10_22 = $dado_10_22[1];
                                     $dif_10_22 = $valor1_10_22 - $valor2_10_22;
+                                    $sub_10_22 = $sub_09_22 + $dif_10_22;
                                   ?>
                                     <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_10_22, 2, ',', '.'); ?></td>
                                     <input id="2022_10_R" type="hidden" value="<?php echo $valor1_10_22; ?>">
-                                    <input id="2022_10_D" type="hidden" value="<?php echo $valor2_10_22;
+                                    <input id="2022_10_D" type="hidden" value="<?php echo $valor2_10_22; ?>">
+                                    <input id="2022_10_S" type="hidden" value="<?php echo $sub_10_22;
                                                                               } ?>">
                                     <?php
                                     /*Query para selecionar os valores de Novembro*/
@@ -842,10 +960,12 @@ $dados = mysqli_fetch_array($resultado);
                                       $valor1_11_22 = $dado_11_22[0];
                                       $valor2_11_22 = $dado_11_22[1];
                                       $dif_11_22 = $valor1_11_22 - $valor2_11_22;
+                                      $sub_11_22 = $sub_10_22 + $dif_11_22;
                                     ?>
                                       <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_11_22, 2, ',', '.'); ?></td>
                                       <input id="2022_11_R" type="hidden" value="<?php echo $valor1_11_22; ?>">
-                                      <input id="2022_11_D" type="hidden" value="<?php echo $valor2_11_22;
+                                      <input id="2022_11_D" type="hidden" value="<?php echo $valor2_11_22; ?>">
+                                      <input id="2022_11_S" type="hidden" value="<?php echo $sub_11_22;
                                                                                 } ?>">
                                       <?php
                                       /*Query para selecionar os valores de Dezembro*/
@@ -855,10 +975,12 @@ $dados = mysqli_fetch_array($resultado);
                                         $valor1_12_22 = $dado_12_22[0];
                                         $valor2_12_22 = $dado_12_22[1];
                                         $dif_12_22 = $valor1_12_22 - $valor2_12_22;
+                                        $sub_12_22 = $sub_11_22 + $dif_12_22;
                                       ?>
                                         <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_12_22, 2, ',', '.'); ?></td>
                                         <input id="2022_12_R" type="hidden" value="<?php echo $valor1_12_22; ?>">
-                                        <input id="2022_12_D" type="hidden" value="<?php echo $valor2_12_22;
+                                        <input id="2022_12_D" type="hidden" value="<?php echo $valor2_12_22; ?>">
+                                        <input id="2022_12_S" type="hidden" value="<?php echo $sub_12_22;
                                                                                   } ?>">
               </tr>
             </tbody>
@@ -919,8 +1041,6 @@ $dados = mysqli_fetch_array($resultado);
     var out_19_D = document.getElementById('2019_10_D').value;
     var nov_19_D = document.getElementById('2019_11_D').value;
     var dez_19_D = document.getElementById('2019_11_D').value;
-
-
     //Subtotal 2019
     var fev_19_S = document.getElementById('2019_02_S').value;
     var mar_19_S = document.getElementById('2019_03_S').value;
@@ -962,7 +1082,18 @@ $dados = mysqli_fetch_array($resultado);
     var nov_20_D = document.getElementById('2020_11_D').value;
     var dez_20_D = document.getElementById('2020_11_D').value;
     //Subtotal 2020
-
+    var jan_20_S = document.getElementById('2020_01_S').value;
+    var fev_20_S = document.getElementById('2020_02_S').value;
+    var mar_20_S = document.getElementById('2020_03_S').value;
+    var abr_20_S = document.getElementById('2020_04_S').value;
+    var mai_20_S = document.getElementById('2020_05_S').value;
+    var jun_20_S = document.getElementById('2020_06_S').value;
+    var jul_20_S = document.getElementById('2020_07_S').value;
+    var ago_20_S = document.getElementById('2020_08_S').value;
+    var set_20_S = document.getElementById('2020_09_S').value;
+    var out_20_S = document.getElementById('2020_10_S').value;
+    var nov_20_S = document.getElementById('2020_11_S').value;
+    var dez_20_S = document.getElementById('2020_12_S').value;
 
 
     //Receitas 2021
@@ -992,7 +1123,18 @@ $dados = mysqli_fetch_array($resultado);
     var nov_21_D = document.getElementById('2021_11_D').value;
     var dez_21_D = document.getElementById('2021_11_D').value;
     //Subtotal 2021
-
+    var jan_21_S = document.getElementById('2021_01_S').value;
+    var fev_21_S = document.getElementById('2021_02_S').value;
+    var mar_21_S = document.getElementById('2021_03_S').value;
+    var abr_21_S = document.getElementById('2021_04_S').value;
+    var mai_21_S = document.getElementById('2021_05_S').value;
+    var jun_21_S = document.getElementById('2021_06_S').value;
+    var jul_21_S = document.getElementById('2021_07_S').value;
+    var ago_21_S = document.getElementById('2021_08_S').value;
+    var set_21_S = document.getElementById('2021_09_S').value;
+    var out_21_S = document.getElementById('2021_10_S').value;
+    var nov_21_S = document.getElementById('2021_11_S').value;
+    var dez_21_S = document.getElementById('2021_12_S').value;
 
 
     //Receitas 2022
@@ -1022,10 +1164,21 @@ $dados = mysqli_fetch_array($resultado);
     var nov_22_D = document.getElementById('2022_11_D').value;
     var dez_22_D = document.getElementById('2022_11_D').value;
     //Subtotal 2022
+    var jan_22_S = document.getElementById('2022_01_S').value;
+    var fev_22_S = document.getElementById('2022_02_S').value;
+    var mar_22_S = document.getElementById('2022_03_S').value;
+    var abr_22_S = document.getElementById('2022_04_S').value;
+    var mai_22_S = document.getElementById('2022_05_S').value;
+    var jun_22_S = document.getElementById('2022_06_S').value;
+    var jul_22_S = document.getElementById('2022_07_S').value;
+    var ago_22_S = document.getElementById('2022_08_S').value;
+    var set_22_S = document.getElementById('2022_09_S').value;
+    var out_22_S = document.getElementById('2022_10_S').value;
+    var nov_22_S = document.getElementById('2022_11_S').value;
+    var dez_22_S = document.getElementById('2022_12_S').value;
 
 
-
-
+    // 2019
     var chartGraph = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -1069,28 +1222,7 @@ $dados = mysqli_fetch_array($resultado);
             borderWidth: 2,
             borderColor: 'rgba(255, 0, 0, 1.0)',
             backgroundColor: 'rgba(255, 0, 0, 1.0)',
-          },
-          {
-            //type: 'line',
-            label: "Subtotal",
-            data: [
-              jan_19_D,
-              fev_19_S,
-              mar_19_S,
-              abr_19_S,
-              mai_19_S,
-              jun_19_S,
-              jul_19_S,
-              ago_19_S,
-              set_19_S,
-              out_19_S,
-              nov_19_S,
-              dez_19_S
-            ],
-            borderWidth: 2,
-            borderColor: 'rgba(0, 89, 255, 1)',
-            backgroundColor: 'rgba(0, 89, 255, 1)',
-          },
+          }
 
         ]
       },
@@ -1116,8 +1248,10 @@ $dados = mysqli_fetch_array($resultado);
       }
     });
 
+
+    //2020
     var chartGraph = new Chart(ctx2, {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
         datasets: [{
@@ -1138,6 +1272,7 @@ $dados = mysqli_fetch_array($resultado);
             ],
             borderWidth: 2,
             borderColor: 'rgba(63, 191, 76, 0.85)',
+            backgroundColor: 'rgba(63, 191, 76, 0.85)',
           },
           {
             label: "Despesas",
@@ -1157,42 +1292,36 @@ $dados = mysqli_fetch_array($resultado);
             ],
             borderWidth: 2,
             borderColor: 'rgba(255, 0, 0, 1.0)',
-          },
-          {
-            label: "Subtotal",
-            data: [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            borderWidth: 2,
-            borderColor: 'rgba(0, 0, 255, 1.0)',
-          },
+            backgroundColor: 'rgba(255, 0, 0, 1.0)',
+          }
         ]
       },
       options: {
         title: {
           display: true,
           fontSize: 20,
-          text: "Balanço financeiro mensal - 2020"
+          text: "Balanço financeiro mensal - 2020",
+          fontColor: 'black'
         },
         labels: {
           fontStyle: "bold"
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return 'R$ ' + value;
+              }
+            }
+          }]
         }
       }
     });
 
+
+    //2021
     var chartGraph = new Chart(ctx3, {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
         datasets: [{
@@ -1213,6 +1342,7 @@ $dados = mysqli_fetch_array($resultado);
             ],
             borderWidth: 2,
             borderColor: 'rgba(63, 191, 76, 0.85)',
+            backgroundColor: 'rgba(63, 191, 76, 0.85)',
           },
           {
             label: "Despesas",
@@ -1232,42 +1362,36 @@ $dados = mysqli_fetch_array($resultado);
             ],
             borderWidth: 2,
             borderColor: 'rgba(255, 0, 0, 1.0)',
-          },
-          {
-            label: "Subtotal",
-            data: [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            borderWidth: 2,
-            borderColor: 'rgba(0, 0, 255, 1.0)',
-          },
+            backgroundColor: 'rgba(255, 0, 0, 1.0)',
+          }
         ]
       },
       options: {
         title: {
           display: true,
           fontSize: 20,
-          text: "Balanço financeiro mensal - 2021"
+          text: "Balanço financeiro mensal - 2021",
+          fontColor: 'black'
         },
         labels: {
           fontStyle: "bold"
         },
+        scales: {
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return 'R$ ' + value;
+              }
+            }
+          }]
+        }
       }
     });
 
+
+    //2022
     var chartGraph = new Chart(ctx4, {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
         datasets: [{
@@ -1288,6 +1412,7 @@ $dados = mysqli_fetch_array($resultado);
             ],
             borderWidth: 2,
             borderColor: 'rgba(63, 191, 76, 0.85)',
+            backgroundColor: 'rgba(63, 191, 76, 0.85)',
           },
           {
             label: "Despesas",
@@ -1307,39 +1432,46 @@ $dados = mysqli_fetch_array($resultado);
             ],
             borderWidth: 2,
             borderColor: 'rgba(255, 0, 0, 1.0)',
-          },
-          {
-            label: "Subtotal",
-            data: [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            borderWidth: 2,
-            borderColor: 'rgba(0, 0, 255, 1.0)',
-          },
+            backgroundColor: 'rgba(255, 0, 0, 1.0)',
+          }
         ]
       },
       options: {
         title: {
           display: true,
           fontSize: 20,
-          text: "Balanço financeiro mensal - 2022"
+          text: "Balanço financeiro mensal - 2022",
+          fontColor: 'black'
         },
         labels: {
           fontStyle: "bold"
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return 'R$ ' + value;
+              }
+            }
+          }]
         }
       }
     });
+
+
+    
+
+
+
+
+
+    var a = parseFloat(dez_22_S);
+    var sub = a.toLocaleString('pt-br', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+    var element = document.getElementById('subtotal');
+    element.innerHTML = '<b>' + sub + '</b>';
   </script>
 
 </body>
