@@ -999,7 +999,7 @@ $dados = mysqli_fetch_array($resultado);
     function confirmacao() {
       var confirma = confirm('Deseja sair?');
       if (confirma == true) {
-        window.location = "http://localhost/controle_financeiro/index.php";
+        window.location = "http://localhost/controle-financeiro/index.php";
       } else {
         window.location = "#";
       }
@@ -1459,7 +1459,7 @@ $dados = mysqli_fetch_array($resultado);
     });
 
 
-    
+
 
 
 
