@@ -7,9 +7,10 @@
     $data = $_POST['data'];
     $descricao = $_POST['descricao'];
     $tipo = strtoupper($_POST['tipo']);
+    $IDU = $_POST['IDU'];
 
 
-    $sql = "INSERT INTO lancamentos (DATA,DESCRICAO,$tipo) VALUES ('$data','$descricao', '$valor')";
+    $sql = "INSERT INTO lancamentos (DATA,DESCRICAO,$tipo,IDU) VALUES ('$data','$descricao', '$valor', '$IDU')";
     if (mysqli_query($connect, $sql)) {
         header("location: \controle-financeiro/home.php");
     } else {

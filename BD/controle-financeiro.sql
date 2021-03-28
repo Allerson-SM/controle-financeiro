@@ -34,7 +34,8 @@ CREATE TABLE `lancamentos` (
   `DESCRICAO` varchar(50) NOT NULL,
   `RECEITA` decimal(20,2) NOT NULL,
   `DESPESA` decimal(20,2) NOT NULL,
-  `HORARIO` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `HORARIO` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `IDU` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

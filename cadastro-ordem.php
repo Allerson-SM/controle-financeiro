@@ -97,6 +97,7 @@ require_once 'componentes/dados-home.php';
                         </select>
                     </div>
                     <div class="col-12">
+                    <input name="IDU" type="hidden" value="<?php echo $dados['ID']; ?>">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </form>

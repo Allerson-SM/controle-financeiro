@@ -250,7 +250,7 @@ $dados = mysqli_fetch_array($resultado);
                 <td style="font-size:medium;">2019</td>
                 <?php
                 /*Query para selecionar os valores de Janeiro*/
-                $consulta_01_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2019;";
+                $consulta_01_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2019 AND IDU = $id";
                 $con_01_19 = $connect->query($consulta_01_19) or die($connect->error);
                 while ($dado_01_19 = $con_01_19->fetch_array()) {
                   $valor1_01_19 = $dado_01_19[0];
@@ -265,7 +265,7 @@ $dados = mysqli_fetch_array($resultado);
                                                             } ?>">
                   <?php
                   /*Query para selecionar os valores de Fevereiro*/
-                  $consulta_02_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2019;";
+                  $consulta_02_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2019 AND IDU = $id";
                   $con_02_19 = $connect->query($consulta_02_19) or die($connect->error);
                   while ($dado_02_19 = $con_02_19->fetch_array()) {
                     $valor1_02_19 = $dado_02_19[0];
@@ -280,7 +280,7 @@ $dados = mysqli_fetch_array($resultado);
                                                               } ?>">
                     <?php
                     /*Query para selecionar os valores de Março*/
-                    $consulta_03_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2019;";
+                    $consulta_03_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2019 AND IDU = $id";
                     $con_03_19 = $connect->query($consulta_03_19) or die($connect->error);
                     while ($dado_03_19 = $con_03_19->fetch_array()) {
                       $valor1_03_19 = $dado_03_19[0];
@@ -296,7 +296,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                 } ?>">
                       <?php
                       /*Query para selecionar os valores de Abril*/
-                      $consulta_04_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2019;";
+                      $consulta_04_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2019 AND IDU = $id";
                       $con_04_19 = $connect->query($consulta_04_19) or die($connect->error);
                       while ($dado_04_19 = $con_04_19->fetch_array()) {
                         $valor1_04_19 = $dado_04_19[0];
@@ -312,7 +312,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                   } ?>">
                         <?php
                         /*Query para selecionar os valores de Maio*/
-                        $consulta_05_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2019;";
+                        $consulta_05_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2019 AND IDU = $id";
                         $con_05_19 = $connect->query($consulta_05_19) or die($connect->error);
                         while ($dado_05_19 = $con_05_19->fetch_array()) {
                           $valor1_05_19 = $dado_05_19[0];
@@ -327,7 +327,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                     } ?>">
                           <?php
                           /*Query para selecionar os valores de Junho*/
-                          $consulta_06_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2019;";
+                          $consulta_06_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2019 AND IDU = $id";
                           $con_06_19 = $connect->query($consulta_06_19) or die($connect->error);
                           while ($dado_06_19 = $con_06_19->fetch_array()) {
                             $valor1_06_19 = $dado_06_19[0];
@@ -342,7 +342,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                       } ?>">
                             <?php
                             /*Query para selecionar os valores de Julho*/
-                            $consulta_07_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2019;";
+                            $consulta_07_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2019 AND IDU = $id";
                             $con_07_19 = $connect->query($consulta_07_19) or die($connect->error);
                             while ($dado_07_19 = $con_07_19->fetch_array()) {
                               $valor1_07_19 = $dado_07_19[0];
@@ -357,7 +357,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                         } ?>">
                               <?php
                               /*Query para selecionar os valores de Agosto*/
-                              $consulta_08_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2019;";
+                              $consulta_08_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2019 AND IDU = $id";
                               $con_08_19 = $connect->query($consulta_08_19) or die($connect->error);
                               while ($dado_08_19 = $con_08_19->fetch_array()) {
                                 $valor1_08_19 = $dado_08_19[0];
@@ -372,7 +372,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                           } ?>">
                                 <?php
                                 /*Query para selecionar os valores de Setembro*/
-                                $consulta_09_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2019;";
+                                $consulta_09_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2019 AND IDU = $id";
                                 $con_09_19 = $connect->query($consulta_09_19) or die($connect->error);
                                 while ($dado_09_19 = $con_09_19->fetch_array()) {
                                   $valor1_09_19 = $dado_09_19[0];
@@ -387,7 +387,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                             } ?>">
                                   <?php
                                   /*Query para selecionar os valores de Outubro*/
-                                  $consulta_10_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2019;";
+                                  $consulta_10_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2019 AND IDU = $id";
                                   $con_10_19 = $connect->query($consulta_10_19) or die($connect->error);
                                   while ($dado_10_19 = $con_10_19->fetch_array()) {
                                     $valor1_10_19 = $dado_10_19[0];
@@ -402,7 +402,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                               } ?>">
                                     <?php
                                     /*Query para selecionar os valores de Novembro*/
-                                    $consulta_11_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2019;";
+                                    $consulta_11_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2019 AND IDU = $id";
                                     $con_11_19 = $connect->query($consulta_11_19) or die($connect->error);
                                     while ($dado_11_19 = $con_11_19->fetch_array()) {
                                       $valor1_11_19 = $dado_11_19[0];
@@ -417,7 +417,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                                 } ?>">
                                       <?php
                                       /*Query para selecionar os valores de Dezembro*/
-                                      $consulta_12_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2019;";
+                                      $consulta_12_19 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2019 AND IDU = $id";
                                       $con_12_19 = $connect->query($consulta_12_19) or die($connect->error);
                                       while ($dado_12_19 = $con_12_19->fetch_array()) {
                                         $valor1_12_19 = $dado_12_19[0];
@@ -436,7 +436,7 @@ $dados = mysqli_fetch_array($resultado);
                 <td>2020</td>
                 <?php
                 /*Query para selecionar os valores de Janeiro*/
-                $consulta_01_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2020;";
+                $consulta_01_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2020 AND IDU = $id";
                 $con_01_20 = $connect->query($consulta_01_20) or die($connect->error);
                 while ($dado_01_20 = $con_01_20->fetch_array()) {
                   $valor1_01_20 = $dado_01_20[0];
@@ -451,7 +451,7 @@ $dados = mysqli_fetch_array($resultado);
                                                             } ?>">
                   <?php
                   /*Query para selecionar os valores de Fevereiro*/
-                  $consulta_02_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2020;";
+                  $consulta_02_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2020 AND IDU = $id";
                   $con_02_20 = $connect->query($consulta_02_20) or die($connect->error);
                   while ($dado_02_20 = $con_02_20->fetch_array()) {
                     $valor1_02_20 = $dado_02_20[0];
@@ -466,7 +466,7 @@ $dados = mysqli_fetch_array($resultado);
                                                               } ?>">
                     <?php
                     /*Query para selecionar os valores de Março*/
-                    $consulta_03_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2020;";
+                    $consulta_03_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2020 AND IDU = $id";
                     $con_03_20 = $connect->query($consulta_03_20) or die($connect->error);
                     while ($dado_03_20 = $con_03_20->fetch_array()) {
                       $valor1_03_20 = $dado_03_20[0];
@@ -481,7 +481,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                 } ?>">
                       <?php
                       /*Query para selecionar os valores de Abril*/
-                      $consulta_04_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2020;";
+                      $consulta_04_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2020 AND IDU = $id";
                       $con_04_20 = $connect->query($consulta_04_20) or die($connect->error);
                       while ($dado_04_20 = $con_04_20->fetch_array()) {
                         $valor1_04_20 = $dado_04_20[0];
@@ -496,7 +496,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                   } ?>">
                         <?php
                         /*Query para selecionar os valores de Maio*/
-                        $consulta_05_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2020;";
+                        $consulta_05_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2020 AND IDU = $id";
                         $con_05_20 = $connect->query($consulta_05_20) or die($connect->error);
                         while ($dado_05_20 = $con_05_20->fetch_array()) {
                           $valor1_05_20 = $dado_05_20[0];
@@ -511,7 +511,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                     } ?>">
                           <?php
                           /*Query para selecionar os valores de Junho*/
-                          $consulta_06_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2020;";
+                          $consulta_06_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2020 AND IDU = $id";
                           $con_06_20 = $connect->query($consulta_06_20) or die($connect->error);
                           while ($dado_06_20 = $con_06_20->fetch_array()) {
                             $valor1_06_20 = $dado_06_20[0];
@@ -526,7 +526,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                       } ?>">
                             <?php
                             /*Query para selecionar os valores de Julho*/
-                            $consulta_07_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2020;";
+                            $consulta_07_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2020 AND IDU = $id";
                             $con_07_20 = $connect->query($consulta_07_20) or die($connect->error);
                             while ($dado_07_20 = $con_07_20->fetch_array()) {
                               $valor1_07_20 = $dado_07_20[0];
@@ -541,7 +541,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                         } ?>">
                               <?php
                               /*Query para selecionar os valores de Agosto*/
-                              $consulta_08_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2020;";
+                              $consulta_08_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2020 AND IDU = $id";
                               $con_08_20 = $connect->query($consulta_08_20) or die($connect->error);
                               while ($dado_08_20 = $con_08_20->fetch_array()) {
                                 $valor1_08_20 = $dado_08_20[0];
@@ -556,7 +556,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                           } ?>">
                                 <?php
                                 /*Query para selecionar os valores de Setembro*/
-                                $consulta_09_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2020;";
+                                $consulta_09_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2020 AND IDU = $id";
                                 $con_09_20 = $connect->query($consulta_09_20) or die($connect->error);
                                 while ($dado_09_20 = $con_09_20->fetch_array()) {
                                   $valor1_09_20 = $dado_09_20[0];
@@ -571,7 +571,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                             } ?>">
                                   <?php
                                   /*Query para selecionar os valores de Outubro*/
-                                  $consulta_10_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2020;";
+                                  $consulta_10_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2020 AND IDU = $id";
                                   $con_10_20 = $connect->query($consulta_10_20) or die($connect->error);
                                   while ($dado_10_20 = $con_10_20->fetch_array()) {
                                     $valor1_10_20 = $dado_10_20[0];
@@ -586,7 +586,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                               } ?>">
                                     <?php
                                     /*Query para selecionar os valores de Novembro*/
-                                    $consulta_11_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2020;";
+                                    $consulta_11_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2020 AND IDU = $id";
                                     $con_11_20 = $connect->query($consulta_11_20) or die($connect->error);
                                     while ($dado_11_20 = $con_11_20->fetch_array()) {
                                       $valor1_11_20 = $dado_11_20[0];
@@ -601,7 +601,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                                 } ?>">
                                       <?php
                                       /*Query para selecionar os valores de Dezembro*/
-                                      $consulta_12_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2020;";
+                                      $consulta_12_20 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2020 AND IDU = $id";
                                       $con_12_20 = $connect->query($consulta_12_20) or die($connect->error);
                                       while ($dado_12_20 = $con_12_20->fetch_array()) {
                                         $valor1_12_20 = $dado_12_20[0];
@@ -620,7 +620,7 @@ $dados = mysqli_fetch_array($resultado);
                 <td>2021</td>
                 <?php
                 /*Query para selecionar os valores de Janeiro*/
-                $consulta_01_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2021;";
+                $consulta_01_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2021 AND IDU = $id";
                 $con_01_21 = $connect->query($consulta_01_21) or die($connect->error);
                 while ($dado_01_21 = $con_01_21->fetch_array()) {
                   $valor1_01_21 = $dado_01_21[0];
@@ -635,7 +635,7 @@ $dados = mysqli_fetch_array($resultado);
                                                             } ?>">
                   <?php
                   /*Query para selecionar os valores de Fevereiro*/
-                  $consulta_02_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2021;";
+                  $consulta_02_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2021 AND IDU = $id";
                   $con_02_21 = $connect->query($consulta_02_21) or die($connect->error);
                   while ($dado_02_21 = $con_02_21->fetch_array()) {
                     $valor1_02_21 = $dado_02_21[0];
@@ -650,7 +650,7 @@ $dados = mysqli_fetch_array($resultado);
                                                               } ?>">
                     <?php
                     /*Query para selecionar os valores de Março*/
-                    $consulta_03_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2021;";
+                    $consulta_03_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2021 AND IDU = $id";
                     $con_03_21 = $connect->query($consulta_03_21) or die($connect->error);
                     while ($dado_03_21 = $con_03_21->fetch_array()) {
                       $valor1_03_21 = $dado_03_21[0];
@@ -665,7 +665,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                 } ?>">
                       <?php
                       /*Query para selecionar os valores de Abril*/
-                      $consulta_04_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2021;";
+                      $consulta_04_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2021 AND IDU = $id";
                       $con_04_21 = $connect->query($consulta_04_21) or die($connect->error);
                       while ($dado_04_21 = $con_04_21->fetch_array()) {
                         $valor1_04_21 = $dado_04_21[0];
@@ -680,7 +680,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                   } ?>">
                         <?php
                         /*Query para selecionar os valores de Maio*/
-                        $consulta_05_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2021;";
+                        $consulta_05_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2021 AND IDU = $id";
                         $con_05_21 = $connect->query($consulta_05_21) or die($connect->error);
                         while ($dado_05_21 = $con_05_21->fetch_array()) {
                           $valor1_05_21 = $dado_05_21[0];
@@ -695,7 +695,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                     } ?>">
                           <?php
                           /*Query para selecionar os valores de Junho*/
-                          $consulta_06_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2021;";
+                          $consulta_06_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2021 AND IDU = $id";
                           $con_06_21 = $connect->query($consulta_06_21) or die($connect->error);
                           while ($dado_06_21 = $con_06_21->fetch_array()) {
                             $valor1_06_21 = $dado_06_21[0];
@@ -710,7 +710,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                       } ?>">
                             <?php
                             /*Query para selecionar os valores de Julho*/
-                            $consulta_07_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2021;";
+                            $consulta_07_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2021 AND IDU = $id";
                             $con_07_21 = $connect->query($consulta_07_21) or die($connect->error);
                             while ($dado_07_21 = $con_07_21->fetch_array()) {
                               $valor1_07_21 = $dado_07_21[0];
@@ -725,7 +725,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                         } ?>">
                               <?php
                               /*Query para selecionar os valores de Agosto*/
-                              $consulta_08_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2021;";
+                              $consulta_08_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2021 AND IDU = $id";
                               $con_08_21 = $connect->query($consulta_08_21) or die($connect->error);
                               while ($dado_08_21 = $con_08_21->fetch_array()) {
                                 $valor1_08_21 = $dado_08_21[0];
@@ -740,7 +740,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                           } ?>">
                                 <?php
                                 /*Query para selecionar os valores de Setembro*/
-                                $consulta_09_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2021;";
+                                $consulta_09_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2021 AND IDU = $id";
                                 $con_09_21 = $connect->query($consulta_09_21) or die($connect->error);
                                 while ($dado_09_21 = $con_09_21->fetch_array()) {
                                   $valor1_09_21 = $dado_09_21[0];
@@ -755,7 +755,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                             } ?>">
                                   <?php
                                   /*Query para selecionar os valores de Outubro*/
-                                  $consulta_10_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2021;";
+                                  $consulta_10_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2021 AND IDU = $id";
                                   $con_10_21 = $connect->query($consulta_10_21) or die($connect->error);
                                   while ($dado_10_21 = $con_10_21->fetch_array()) {
                                     $valor1_10_21 = $dado_10_21[0];
@@ -770,7 +770,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                               } ?>">
                                     <?php
                                     /*Query para selecionar os valores de Novembro*/
-                                    $consulta_11_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2021;";
+                                    $consulta_11_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2021 AND IDU = $id";
                                     $con_11_21 = $connect->query($consulta_11_21) or die($connect->error);
                                     while ($dado_11_21 = $con_11_21->fetch_array()) {
                                       $valor1_11_21 = $dado_11_21[0];
@@ -785,7 +785,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                                 } ?>">
                                       <?php
                                       /*Query para selecionar os valores de Dezembro*/
-                                      $consulta_12_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2021;";
+                                      $consulta_12_21 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2021 AND IDU = $id";
                                       $con_12_21 = $connect->query($consulta_12_21) or die($connect->error);
                                       while ($dado_12_21 = $con_12_21->fetch_array()) {
                                         $valor1_12_21 = $dado_12_21[0];
@@ -804,7 +804,7 @@ $dados = mysqli_fetch_array($resultado);
                 <td>2022</td>
                 <?php
                 /*Query para selecionar os valores de Janeiro*/
-                $consulta_01_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2022;";
+                $consulta_01_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 1 AND YEAR(DATA) = 2022 AND IDU = $id";
                 $con_01_22 = $connect->query($consulta_01_22) or die($connect->error);
                 while ($dado_01_22 = $con_01_22->fetch_array()) {
                   $valor1_01_22 = $dado_01_22[0];
@@ -819,7 +819,7 @@ $dados = mysqli_fetch_array($resultado);
                                                             } ?>">
                   <?php
                   /*Query para selecionar os valores de Fevereiro*/
-                  $consulta_02_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2022;";
+                  $consulta_02_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 2 AND YEAR(DATA) = 2022 AND IDU = $id";
                   $con_02_22 = $connect->query($consulta_02_22) or die($connect->error);
                   while ($dado_02_22 = $con_02_22->fetch_array()) {
                     $valor1_02_22 = $dado_02_22[0];
@@ -834,7 +834,7 @@ $dados = mysqli_fetch_array($resultado);
                                                               } ?>">
                     <?php
                     /*Query para selecionar os valores de Março*/
-                    $consulta_03_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2022;";
+                    $consulta_03_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 3 AND YEAR(DATA) = 2022 AND IDU = $id";
                     $con_03_22 = $connect->query($consulta_03_22) or die($connect->error);
                     while ($dado_03_22 = $con_03_22->fetch_array()) {
                       $valor1_03_22 = $dado_03_22[0];
@@ -849,7 +849,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                 } ?>">
                       <?php
                       /*Query para selecionar os valores de Abril*/
-                      $consulta_04_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2022;";
+                      $consulta_04_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 4 AND YEAR(DATA) = 2022 AND IDU = $id";
                       $con_04_22 = $connect->query($consulta_04_22) or die($connect->error);
                       while ($dado_04_22 = $con_04_22->fetch_array()) {
                         $valor1_04_22 = $dado_04_22[0];
@@ -864,7 +864,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                   } ?>">
                         <?php
                         /*Query para selecionar os valores de Maio*/
-                        $consulta_05_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2022;";
+                        $consulta_05_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 5 AND YEAR(DATA) = 2022 AND IDU = $id";
                         $con_05_22 = $connect->query($consulta_05_22) or die($connect->error);
                         while ($dado_05_22 = $con_05_22->fetch_array()) {
                           $valor1_05_22 = $dado_05_22[0];
@@ -879,7 +879,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                     } ?>">
                           <?php
                           /*Query para selecionar os valores de Junho*/
-                          $consulta_06_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2022;";
+                          $consulta_06_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 6 AND YEAR(DATA) = 2022 AND IDU = $id";
                           $con_06_22 = $connect->query($consulta_06_22) or die($connect->error);
                           while ($dado_06_22 = $con_06_22->fetch_array()) {
                             $valor1_06_22 = $dado_06_22[0];
@@ -894,7 +894,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                       } ?>">
                             <?php
                             /*Query para selecionar os valores de Julho*/
-                            $consulta_07_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2022;";
+                            $consulta_07_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 7 AND YEAR(DATA) = 2022 AND IDU = $id";
                             $con_07_22 = $connect->query($consulta_07_22) or die($connect->error);
                             while ($dado_07_22 = $con_07_22->fetch_array()) {
                               $valor1_07_22 = $dado_07_22[0];
@@ -909,7 +909,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                         } ?>">
                               <?php
                               /*Query para selecionar os valores de Agosto*/
-                              $consulta_08_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2022;";
+                              $consulta_08_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 8 AND YEAR(DATA) = 2022 AND IDU = $id";
                               $con_08_22 = $connect->query($consulta_08_22) or die($connect->error);
                               while ($dado_08_22 = $con_08_22->fetch_array()) {
                                 $valor1_08_22 = $dado_08_22[0];
@@ -924,7 +924,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                           } ?>">
                                 <?php
                                 /*Query para selecionar os valores de Setembro*/
-                                $consulta_09_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2022;";
+                                $consulta_09_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 9 AND YEAR(DATA) = 2022 AND IDU = $id";
                                 $con_09_22 = $connect->query($consulta_09_22) or die($connect->error);
                                 while ($dado_09_22 = $con_09_22->fetch_array()) {
                                   $valor1_09_22 = $dado_09_22[0];
@@ -939,7 +939,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                             } ?>">
                                   <?php
                                   /*Query para selecionar os valores de Outubro*/
-                                  $consulta_10_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2022;";
+                                  $consulta_10_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 10 AND YEAR(DATA) = 2022 AND IDU = $id";
                                   $con_10_22 = $connect->query($consulta_10_22) or die($connect->error);
                                   while ($dado_10_22 = $con_10_22->fetch_array()) {
                                     $valor1_10_22 = $dado_10_22[0];
@@ -954,7 +954,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                               } ?>">
                                     <?php
                                     /*Query para selecionar os valores de Novembro*/
-                                    $consulta_11_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2022;";
+                                    $consulta_11_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 11 AND YEAR(DATA) = 2022 AND IDU = $id";
                                     $con_11_22 = $connect->query($consulta_11_22) or die($connect->error);
                                     while ($dado_11_22 = $con_11_22->fetch_array()) {
                                       $valor1_11_22 = $dado_11_22[0];
@@ -969,7 +969,7 @@ $dados = mysqli_fetch_array($resultado);
                                                                                 } ?>">
                                       <?php
                                       /*Query para selecionar os valores de Dezembro*/
-                                      $consulta_12_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2022;";
+                                      $consulta_12_22 = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE MONTH(DATA) = 12 AND YEAR(DATA) = 2022 AND IDU = $id";
                                       $con_12_22 = $connect->query($consulta_12_22) or die($connect->error);
                                       while ($dado_12_22 = $con_12_22->fetch_array()) {
                                         $valor1_12_22 = $dado_12_22[0];
@@ -983,7 +983,7 @@ $dados = mysqli_fetch_array($resultado);
                                         <input id="2022_12_S" type="hidden" value="<?php echo $sub_12_22;
                                                                                   } ?>">
 
-                                        <?php $consulta_F = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos";
+                                        <?php $consulta_F = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos WHERE IDU = $id";
                                         $con_F = $connect->query($consulta_F) or die($connect->error);
                                         while ($dado_F = $con_F->fetch_array()) {
                                           $receitas = $dado_F[0];
