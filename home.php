@@ -982,6 +982,15 @@ $dados = mysqli_fetch_array($resultado);
                                         <input id="2022_12_D" type="hidden" value="<?php echo $valor2_12_22; ?>">
                                         <input id="2022_12_S" type="hidden" value="<?php echo $sub_12_22;
                                                                                   } ?>">
+
+                                        <?php $consulta_F = "SELECT SUM(RECEITA) AS RECEITA, SUM(DESPESA) AS DESPESA FROM lancamentos";
+                                        $con_F = $connect->query($consulta_F) or die($connect->error);
+                                        while ($dado_F = $con_F->fetch_array()) {
+                                          $receitas = $dado_F[0];
+                                          $despesas = $dado_F[1]; ?>
+                                          <input id="receitas" type="hidden" value="<?php echo $receitas; ?>">
+                                          <input id="despesas" type="hidden" value="<?php echo $despesas;
+                                                                                  } ?>">
               </tr>
             </tbody>
           </table>
@@ -1460,18 +1469,40 @@ $dados = mysqli_fetch_array($resultado);
 
 
 
+    var receitasT = document.getElementById('receitas').value;
+    var despesasT = document.getElementById('despesas').value;
+    console.log(receitasT);
+    console.log(despesasT);
+    
+    var a = parseFloat(receitasT);
+    if (isNaN(a)){
+      a = 0;
+    } 
+    var recT = a.toLocaleString('pt-br', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+    var element = document.getElementById('receitaT');
+    element.innerHTML = '<b>' + recT + '</b>';
 
-
-
-
-
-    var a = parseFloat(dez_22_S);
-    var sub = a.toLocaleString('pt-br', {
+    var b = parseFloat(despesasT);
+    if (isNaN(b)){
+      b = 0;
+    }
+    var desT = b.toLocaleString('pt-br', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+    var element = document.getElementById('despesaT');
+    element.innerHTML = '<b>' + desT + '</b>';
+    
+    var c = parseFloat(dez_22_S);
+    var subT = c.toLocaleString('pt-br', {
       style: 'currency',
       currency: 'BRL'
     });
     var element = document.getElementById('subtotal');
-    element.innerHTML = '<b>' + sub + '</b>';
+    element.innerHTML = '<b>' + subT + '</b>';
   </script>
 
 </body>
