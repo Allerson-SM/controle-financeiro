@@ -4,10 +4,8 @@ require_once 'componentes/connect.php';
 if (isset($_POST['btn-enviar'])) :
     $erros = array();
     $nome = mysqli_escape_string($connect, $_POST['nome']);
-    $snome = mysqli_escape_string($connect, $_POST['snome']);
     $senha = mysqli_escape_string($connect, $_POST['senha']);
     $email = mysqli_escape_string($connect, $_POST['email']);
-    $telefone = mysqli_escape_string($connect, $_POST['telefone']);
     $sexo = mysqli_escape_string($connect, $_POST['sexo']);
 
     if (empty($nome) or empty($snome) or empty($senha) or empty($email) or empty($telefone) or empty($sexo)) :

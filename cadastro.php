@@ -16,7 +16,7 @@ require_once('componentes/erro_cadastro.php');
 
     <style>
         body {
-            background-image: url(imgs/pattern3.png);
+            background-image: url(imgs/background2.png);
         }
 
         .cadastrar {
@@ -27,7 +27,9 @@ require_once('componentes/erro_cadastro.php');
             font-family: Verdana;
             background-color: whitesmoke;
             padding: 2%;
+            padding-bottom: 0;
             border-radius: 5%;
+            box-shadow: 5px 5px 10px rgb(56, 53, 53);
         }
 
         .login-1 {
@@ -49,6 +51,16 @@ require_once('componentes/erro_cadastro.php');
         #senha-1 {
             padding-bottom: 5%;
         }
+
+        input{
+           background-color: transparent;
+           border-radius: 5px;
+           border-style: none;
+           border-bottom-style: solid;
+           border-bottom-color: black;
+           outline: none;
+        }
+
     </style>
 </head>
 
@@ -76,15 +88,7 @@ require_once('componentes/erro_cadastro.php');
                     <input type="text" name="nome" id="nome" placeholder="Nome" style="width: 100%;">
                 </div>
                 <div class="login-1">
-                    <input type="text" name="snome" id="snome" placeholder="Sobrenome" style="width: 100%;">
-                </div>
-                <div class="row" id="row-1">
-                    <div class="col">
-                        <input type="text" name="email" id="email" placeholder="E-mail" style="width: 100%;">
-                    </div>
-                    <div class="col">
-                        <input type="tel" name="telefone" id="telefone" placeholder="Tel. Ex: (00) 00000-0000" style="width: 100%;">
-                    </div>
+                    <input type="text" name="email" id="email" placeholder="E-mail" style="width: 100%;">
                 </div>
                 <div class="row">
                     <div class="col" id="senha-1">
@@ -106,17 +110,13 @@ require_once('componentes/erro_cadastro.php');
                                 Feminino
                             </label>
                         </div>
-                        <div class="col-xl-6">
-                            <input type="checkbox" name="termos" id="termos"> Li e concordo com os <a href="">termos</a> de uso
+                        <br>
+                        <br>
+                        <div class="botao">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;" name="btn-enviar">Registrar</button>
                         </div>
                     </div>
-                </div>
-
-                <div class="botao">
-                    <button type="submit" class="btn btn-primary" style="width: 100%;" name="btn-enviar">Registrar</button>
-                </div>
-        </div>
-        </form>
+            </form>
         </div>
     </body>
 
