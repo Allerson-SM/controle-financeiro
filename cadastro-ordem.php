@@ -87,15 +87,15 @@ require_once 'componentes/dados-home.php';
                 <form class="row g-3" id="form-lancamento" action="componentes\cadastrar-item.php" method="POST">
                     <div class="col-md-4">
                         <label for="inputEmail4" class="form-label">Valor</label>
-                        <input name="valor" type="text" class="form-control" id="inputValor" onKeyPress="return(moeda(this,'.',',',event))">
+                        <input name="valor" type="text" class="form-control" id="valor" onKeyPress="return(moeda(this,'.',',',event))">
                     </div>
                     <div class="col-md-4">
                         <label for="inputDate" class="form-label">Data</label>
-                        <input name="data" type="date" class="form-control" id="inputCity">
+                        <input name="data" type="date" class="form-control" id="data">
                     </div>
                     <div class="col-md-5">
                         <label for="inputPassword4" class="form-label">Descrição</label>
-                        <input name="descricao" type="text" class="form-control" id="inputPassword4">
+                        <input name="descricao" type="text" class="form-control" id="descricao" maxlength="20">
                     </div>
                     <div class="col-md-3">
                         <label for="inputState" class="form-label">Tipo</label>
