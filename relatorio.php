@@ -1,6 +1,6 @@
 <?php
 require_once 'componentes/dados-home.php';
-
+require 'componentes/connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -104,30 +104,37 @@ require_once 'componentes/dados-home.php';
                             </th>
                         </tr>
                     <tbody>
-                        <tr>
-                            <td>
-                                105
-                            </td>
-                            <td>
-                                Salário
-                            </td>
-                            <td>
-                                Receita
-                            </td>
-                            <td>
-                                R$500,00
-                            </td>
-                            <td>
-                                05/02/2022
-                            </td>
-                        </tr>
+
+                        <?php $consulta_01 = "SELECT * FROM lancamentos WHERE IDU = $id";
+                        $con_01 = $connect->query($consulta_01) or die($connect->error);
+                        while ($dado_01 = $con_01->fetch_array()) {
+                            $tipo = 0; ?>
+                            <tr>
+                                <td>
+                                    <?php echo ($dado_01['ID']); ?>
+                                </td>
+                                <td>
+                                    <?php echo ($dado_01['DESCRICAO']); ?>
+                                </td>
+                                <td>
+                                    <?php if ($dado_01['RECEITA'] == 0) {
+                                        $tipo = "<span style='color:red;'>Despesa</span>";
+                                    } else $tipo = "<span style='color:green;'>Receita</span>";
+                                    echo $tipo;
+                                    ?>
+                                </td>
+                                <td>R$
+                                    <?php if ($dado_01['RECEITA'] == 0) {
+                                        echo number_format($dado_01['DESPESA'], 2, ',', '.');
+                                    } else echo number_format($dado_01['RECEITA'], 2, ',', '.'); ?>
+                                </td>
+                                <td>
+                                    <?php echo date('d/m/Y', strtotime(($dado_01['DATA']))); ?>
+                                </td>
+                            </tr><?php   } ?>
                     </tbody>
                     </thead>
                 </table>
-
-
-
-
                 <script>
                     function confirmacao() {
                         var confirma = confirm('Deseja sair?');
