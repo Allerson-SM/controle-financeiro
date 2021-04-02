@@ -20,7 +20,7 @@ $dados = mysqli_fetch_array($resultado);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <style>
     .usuario {
@@ -464,7 +464,7 @@ $dados = mysqli_fetch_array($resultado);
                   while ($dado_02_20 = $con_02_20->fetch_array()) {
                     $valor1_02_20 = $dado_02_20[0];
                     $valor2_02_20 = $dado_02_20[1];
-                    $dif_02_20 = $valor2_01_20 - $valor2_02_20;
+                    $dif_02_20 = $valor1_02_20 - $valor2_02_20;
                     $sub_02_20 = $sub_01_20 + $dif_02_20;
                   ?>
                     <td style="width: auto; text-align: center; font-size:small;"> R$ <?php echo number_format($dif_02_20, 2, ',', '.'); ?></td>
@@ -1016,7 +1016,7 @@ $dados = mysqli_fetch_array($resultado);
     function confirmacao() {
       var confirma = confirm('Deseja sair?');
       if (confirma == true) {
-        window.location = "http://localhost/controle-financeiro/index.php";
+        window.location = "http://localhost/controle-financeiro/componentes/logout.php";
       } else {
         window.location = "#";
       }

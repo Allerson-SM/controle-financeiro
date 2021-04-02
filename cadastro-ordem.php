@@ -9,7 +9,7 @@ require_once 'componentes/dados-home.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lançamento</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <style>
         .usuario {
@@ -120,7 +120,7 @@ require_once 'componentes/dados-home.php';
                     function confirmacao() {
                         var confirma = confirm('Deseja sair?');
                         if (confirma == true) {
-                            window.location = "http://localhost/controle-financeiro/index.php";
+                            window.location = "http://localhost/controle-financeiro/componentes/logout.php";
                         } else {
                             window.location = "#";
                         }
