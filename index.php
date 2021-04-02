@@ -65,7 +65,7 @@ require_once 'componentes/dados.php';
         ?>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <div class="login">
-                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" style="width: 100%;"><br><br>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" style="width: 100%;"><br><br>
             </div>
             <div class="login">
                 <input type="password" name="senha" id="senha" placeholder="Digite sua senha" style="width: 100%;"> <br>

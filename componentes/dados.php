@@ -3,18 +3,18 @@ require_once 'componentes/connect.php';
 session_start();
 if (isset($_POST['btn-enviar'])) :
     $erros = array();
-    $nome = mysqli_escape_string($connect, $_POST['nome']);
+    $email = mysqli_escape_string($connect, $_POST['email']);
     $senha = mysqli_escape_string($connect, $_POST['senha']);
 
-    if (empty($nome) or empty($senha)) :
-        $erros[] = "<p style='color: red; font-size:small'>Nome/senha não fornecidos</p>";
+    if (empty($email) or empty($senha)) :
+        $erros[] = "<p style='color: red; font-size:small'>E-mail/senha não fornecidos</p>";
     else :
-        $sql = "SELECT NOME FROM usuarios WHERE NOME = '$nome'";
+        $sql = "SELECT EMAIL FROM usuarios WHERE EMAIL = '$email'";
         $resultado = mysqli_query($connect, $sql);
 
         if (mysqli_num_rows($resultado) > 0) :
             $senha = md5($senha);
-            $sql = "SELECT * FROM usuarios WHERE NOME = '$nome' AND SENHA = '$senha'";
+            $sql = "SELECT * FROM usuarios WHERE EMAIL = '$email' AND SENHA = '$senha'";
             $resultado = mysqli_query($connect, $sql);
 
             if (mysqli_num_rows($resultado) == 1) :
@@ -24,11 +24,11 @@ if (isset($_POST['btn-enviar'])) :
                 $_SESSION['id_usuario'] = $dados['ID'];
                 header('Location: home.php');
             else :
-                $erros[] = "<p style='color: red; font-size:small'>Usuário e senha não conferem</p>";
+                $erros[] = "<p style='color: red; font-size:small'>E-mail e senha não conferem</p>";
 
             endif;
         else :
-            $erros[] = "<p style='color: red; font-size:small'>Usuário inexistente</p>";
+            $erros[] = "<p style='color: red; font-size:small'>E-mail inexistente</p>";
         endif;
     endif;
 endif;
