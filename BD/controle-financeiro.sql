@@ -47,9 +47,7 @@ CREATE TABLE `lancamentos` (
 CREATE TABLE `usuarios` (
   `ID` int(255) NOT NULL,
   `NOME` varchar(30) NOT NULL,
-  `SOBRENOME` varchar(30) NOT NULL,
   `EMAIL` varchar(50) NOT NULL,
-  `TELEFONE` varchar(20) NOT NULL,
   `SENHA` varchar(32) NOT NULL,
   `SEXO` char(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
