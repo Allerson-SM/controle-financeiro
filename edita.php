@@ -95,6 +95,7 @@ while ($dado_01 = $con_01->fetch_array()) {
                     </div>
 
                     <form class="row g-3" id="form-lancamento" action="componentes\editar-item.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $id;?>">
                         <div class="col-md-4">
                             <label for="inputEmail4" class="form-label">Valor</label>
                             <input name="valor" type="text" class="form-control" id="valor" value="<?php if ($dado_01['RECEITA'] == 0) {
