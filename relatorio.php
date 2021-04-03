@@ -162,11 +162,6 @@ require 'componentes/connect.php';
                             window.location = "#";
                         }
                     };
-
-
-                    var teste = document.getElementById('ID');
-
-                    console.log(teste);
                 </script>
 
 
