@@ -161,7 +161,7 @@ require 'componentes/connect.php';
                         } else {
                             window.location = "#";
                         }
-                    };
+                    }; 
                 </script>
 
 
